@@ -3,8 +3,8 @@ import socket
 
 if __name__ == "__main__":
 
-    target_host = "www.google.com"
-    target_port = 80
+    target_host = "0.0.0.0"
+    target_port = 9998
 
     # Create the socket object
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     client.connect((target_host, target_port))
 
     # Send some data
-    send_string = b"GET / HTTP/1.1\r\nHost: google.com\r\n\r\n"
+    send_string = b"This is a test, what do you think?"
     client.send(send_string)
 
     # Receive some data
